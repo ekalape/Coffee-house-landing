@@ -1,0 +1,13 @@
+<div class="flex justify-between items-center py-0">
+  <div class=" cursor-pointer">
+    <img src="assets/logo.png" alt="Logo">
+  </div>
+  <nav class="flex justify-center gap-4">
+    <a class="block" *ngFor="let title of titles" (click)="selectHeaderMenuTitle(title)"
+      [class.selected]="selectedTitle === title"
+      href="#{{title | firstWord}}">{{title}}</a>
+  </nav>
+  <a class="flex justify-center gap-2 items-center cursor-pointer">Menu
+    <img src="assets/coffee-cup.png" alt="">
+  </a>
+</div>

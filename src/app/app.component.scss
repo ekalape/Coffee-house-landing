@@ -1,6 +1,12 @@
-@import "assets/_variables.scss";
+@import "../assets/variables.scss";
 
 :host {
-  width: 1440px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  max-width: 1440px;
+  width: 100%;
   padding: 20px 40px;
+  background-color: $light-color;
+  position: relative;
 }
