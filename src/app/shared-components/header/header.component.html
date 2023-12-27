@@ -1,5 +1,5 @@
 <div class="flex justify-between items-center py-0">
-  <div class=" cursor-pointer">
+  <div class=" cursor-pointer" routerLink="/">
     <img src="assets/logo.png" alt="Logo">
   </div>
   <nav class="flex justify-center gap-4">
@@ -7,7 +7,7 @@
       [class.selected]="selectedTitle === title"
       href="#{{title | firstWord}}">{{title}}</a>
   </nav>
-  <a class="flex justify-center gap-2 items-center cursor-pointer">Menu
+  <a class="flex justify-center gap-2 items-center cursor-pointer" routerLink="/menu">Menu
     <img src="assets/coffee-cup.png" alt="">
   </a>
 </div>

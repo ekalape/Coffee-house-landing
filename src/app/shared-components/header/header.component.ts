@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FirstWordPipe } from '../pipes/first-word.pipe';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, FirstWordPipe],
+  imports: [CommonModule, FirstWordPipe, RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

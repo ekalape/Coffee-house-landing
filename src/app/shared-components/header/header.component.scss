@@ -3,7 +3,10 @@
 :host {
   width: 100%;
   max-width: 100%;
-  position: relative;
+  position: fixed;
+  top: 0;
+  padding: 20px $base-padding;
+  max-width: $base-width;
 }
 a {
   @include linkbutton-text();
