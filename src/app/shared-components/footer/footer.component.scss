@@ -1,0 +1,64 @@
+@import "../../../assets/variables.scss";
+
+:host {
+  width: 100%;
+  max-width: $base-width;
+  padding: 20px $base-padding;
+  background-color: $container-color;
+  //height: 250px;
+  border-radius: 40px;
+  position: relative;
+  color: $light-color;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 100px;
+  gap: 100px;
+  font-family: "Inter";
+
+  @media (max-width: $tablet-width) {
+    grid-template-columns: 1fr;
+  }
+  @media (max-width: $mobile-width) {
+    padding: 60px 16px;
+    gap: 40px;
+  }
+
+  & h2 {
+    width: 100%;
+    max-width: 530px;
+    @media (max-width: $mobile-width) {
+      font-size: 32px;
+      max-width: 316px;
+    }
+
+    & span {
+      color: $accent-color;
+    }
+  }
+  & .social-container {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid $border-light-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.contact-data {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 16px;
+  gap: 8px;
+  color: $light-color;
+  & img {
+    width: 20px;
+    height: 20px;
+  }
+}

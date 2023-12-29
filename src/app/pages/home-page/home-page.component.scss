@@ -1,0 +1,6 @@
+@import "assets/variables.scss";
+
+:host {
+  padding: 100px $base-padding;
+  flex: 1;
+}
