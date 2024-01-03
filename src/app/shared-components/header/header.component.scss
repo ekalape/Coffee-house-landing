@@ -4,9 +4,11 @@
   width: 100%;
   max-width: 100%;
   position: fixed;
+  z-index: 5;
   top: 0;
   padding: 20px $base-padding;
   max-width: $base-width;
+  background-color: $body-color;
 }
 a {
   @include linkbutton-text();

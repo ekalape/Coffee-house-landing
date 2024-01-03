@@ -1,6 +1,9 @@
 @import "assets/variables.scss";
 
 :host {
-  padding: 100px $base-padding;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   flex: 1;
 }
