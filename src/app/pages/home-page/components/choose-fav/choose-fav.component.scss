@@ -1,0 +1,104 @@
+@import "assets/variables.scss";
+
+:host {
+  width: 100%;
+  padding: 100px 0;
+  color: $dark-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  & h2 {
+    font-family: "Inter";
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 115%;
+    text-align: center;
+    @media (max-width: $mobile-width) {
+      font-size: 32px;
+      line-height: 125%;
+    }
+  }
+}
+
+.fav-slider {
+  //width: calc(480px * 3);
+  padding: 20px 10px;
+  @media (max-width: $mobile-width) {
+    //width: calc(348px * 3);
+  }
+}
+
+.fav-slider__wrapper {
+  width: 480px;
+  overflow-x: hidden;
+
+  @media (max-width: $mobile-width) {
+    width: 348px;
+  }
+}
+
+.fav-slider__card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  & img {
+    display: block;
+    width: 100%;
+  }
+  & h4 {
+    @include heading3-text();
+  }
+  & p {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 125%;
+  }
+}
+
+.spec {
+  font-style: italic;
+  color: $accent-color;
+}
+
+.arrows-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  padding-bottom: 5px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: $border-dark-color;
+  border: 1px solid $border-dark-color;
+  margin: 5px;
+  position: absolute;
+  top: 50%;
+  transition: 0.5s;
+  &:hover {
+    background-color: $container-color;
+    color: $border-light-color;
+    border: 1px solid $border-light-color;
+  }
+
+  &.left {
+    left: 0px;
+  }
+  &.right {
+    right: 0px;
+  }
+}
+
+.slider-control {
+  display: inline-block;
+  width: 40px;
+  height: 4px;
+  border-radius: 100px;
+  background-color: $border-light-color;
+  &.active {
+    background-color: $border-dark-color;
+  }
+}

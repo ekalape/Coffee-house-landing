@@ -1,1 +1,20 @@
-<p>choose-fav works!</p>
+<h2>Choose your <span class="spec">favorite</span> coffee</h2>
+<div class="fav-slider__wrapper ">
+  <button class="arrows-btn left" (click)="switch(-1)"> &larr;</button>
+  <button class="arrows-btn right" (click)="switch(1)">&rarr;</button>
+  <div class="fav-slider flex justify-center flex-nowrap">
+
+    <div class="fav-slider__card" *ngFor="let fav of favOptions; let i=index"
+      [style.display]="i === currentIndex ? 'flex' : 'none'">
+      <img [src]=fav.img [alt]=fav.name>
+      <h4>{{fav.name}}</h4>
+      <p>{{fav.description}}</p>
+      <h4>{{fav.price|currency:'USD'}}</h4>
+    </div>
+
+  </div>
+</div>
+<div class="flex gap-1 pt-2">
+  <span class="slider-control" *ngFor="let fav of favOptions; let i = index"
+    [ngClass]="{'active': i === currentIndex}"></span>
+</div>
