@@ -1,13 +1,23 @@
 <div class="flex justify-between items-center py-0">
-  <div class=" cursor-pointer" routerLink="/">
+  <div class=" cursor-pointer" routerLink="/"
+    (click)="scrollToComponent('Hero', 'Favorite coffee')">
     <img src="assets/logo.png" alt="Logo">
   </div>
-  <nav class="flex justify-center gap-4">
-    <a class="block" *ngFor="let title of titles" (click)="selectHeaderMenuTitle(title)"
-      [class.selected]="selectedTitle === title"
-      href="#{{title | firstWord}}">{{title}}</a>
-  </nav>
-  <a class="flex justify-center gap-2 items-center cursor-pointer" routerLink="/menu">Menu
-    <img src="assets/coffee-cup.png" alt="">
-  </a>
+  <div class="menu-drawer" [@drawerAnimation]="opened?'open':'close'">
+    <nav class="flex justify-center gap-4 main-menu">
+      <a class="block" *ngFor="let title of titles"
+        [class.selected]="selectedTitle === title"
+        (click)="scrollToComponent(title.slice(0,4), title)"
+        href="#{{title | firstWord}}">{{title}}</a>
+    </nav>
+
+    <a class="flex justify-center gap-2 items-center cursor-pointer"
+      routerLink="/menu">Menu
+      <img src="assets/coffee-cup.png" alt="">
+    </a>
+  </div>
+  <div class="drawer-control" (click)="openCloseDrawer()" [ngClass]="opened?'cross':''">
+    <span></span>
+    <span></span>
+  </div>
 </div>

@@ -41,6 +41,10 @@
   &.two {
     background-image: url("../../../../../assets/images/about-4.jpg");
   }
+
+  @media (max-width: ($tablet-width )) {
+    height: 400px;
+  }
 }
 
 .down-img {
