@@ -1,0 +1,66 @@
+<div class="overlay" (click)="close($event)">
+
+  <div class="details__container">
+    <aside>
+      <img [src]="item?.img" alt="">
+    </aside>
+    <aside class="details__info">
+      <h3>{{item?.name}}</h3>
+      <p>{{item?.description}}</p>
+      <div class="size-block">
+        <span>Size:</span>
+        <div class="options__container">
+          <label class="option sizes"
+            [ngClass]="(selectedSize?.size===sizeOptions[0]?.size)?'checked':''">
+            {{sizeOptions[0]?.size}}
+            <input type="radio" [value]="sizeOptions[0]"
+              (change)="switchSizeContent(sizeOptions[0])" name="size-options"></label>
+          <label class="option sizes"
+            [ngClass]="selectedSize?.size===sizeOptions[1]?.size?'checked':''">
+            {{sizeOptions[1]?.size}}
+            <input type="radio" [value]="sizeOptions[1]"
+              (change)="switchSizeContent(sizeOptions[1])" name="size-options"></label>
+          <label class="option sizes"
+            [ngClass]="selectedSize?.size===sizeOptions[2]?.size?'checked':''">
+            {{sizeOptions[2]?.size}}
+            <input type="radio" [value]="sizeOptions[2]"
+              (change)="switchSizeContent(sizeOptions[2])" name="size-options"></label>
+        </div>
+      </div>
+      <div class="additive-block">
+        <div class="addi-block">
+          <span>Size:</span>
+          <div class="options__container">
+            <label class="option addi"
+              [ngClass]="isAddiChecked(addiOptions[0])?'checked':''">
+              {{addiOptions[0]?.addi?.name}}
+              <input type="checkbox" [value]="addiOptions[0]"
+                (change)="switchAddiContent(addiOptions[0])" name="addi-options"></label>
+            <label class="option addi"
+              [ngClass]="isAddiChecked(addiOptions[1])?'checked':''">
+              {{addiOptions[1]?.addi?.name}}
+              <input type="checkbox" [value]="addiOptions[1]"
+                (change)="switchAddiContent(addiOptions[1])" name="addi-options"></label>
+            <label class="option addi"
+              [ngClass]="isAddiChecked(addiOptions[2])?'checked':''">
+              {{addiOptions[2]?.addi?.name}}
+              <input type="checkbox" [value]="addiOptions[2]"
+                (change)="switchAddiContent(addiOptions[2])" name="addi-options"></label>
+          </div>
+        </div>
+
+      </div>
+      <div class="total-block">
+        <h3>Total:</h3>
+        <h3>{{totalPrice|currency:'USD'}}</h3>
+      </div>
+      <p class="extra-info">The cost is not final. Download our mobile app to see the
+        final price and place
+        your order. Earn loyalty points and enjoy your favorite coffee with up to 20%
+        discount.</p>
+      <button (click)="this.closeModal.emit()">Close</button>
+    </aside>
+  </div>
+
+
+</div>

@@ -1,6 +1,6 @@
 <h2>Behind each of our cups hides an <span>amazing surprise</span></h2>
-<div class="menu-options__container">
 
+<div class="menu-options__container">
   <label for="coffee-option" class="menu-option coffee-option"
     [ngClass]="contentFilter===menuItems.COFFEE?'checked':''">
     {{menuItems.COFFEE}}
@@ -17,4 +17,14 @@
     <input type="radio" [value]="menuItems.DESSERT" id="dessert-option"
       (change)="switchContent(menuItems.DESSERT)" name="menu-options"></label>
 </div>
-<!-- <router-outlet></router-outlet> -->
+<div class="menu-items-container">
+  <app-menu-item-card *ngFor="let item of (allMenuContent|async)|menuFilter:contentFilter"
+    (click)="openDetails(item)" [item]="item"></app-menu-item-card>
+</div>
+
+<app-item-details *ngIf="opened" (closeModal)="openDetails(undefined)"
+  [item]="selected"></app-item-details>
+
+
+<!-- <app-item-details (closeModal)="openDetails(undefined)"
+  [item]="tempItem"></app-item-details> -->

@@ -82,3 +82,10 @@
     }
   }
 }
+.menu-items-container {
+  gap: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
