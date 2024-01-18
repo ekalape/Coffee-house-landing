@@ -1,0 +1,41 @@
+@import "assets/variables.scss";
+
+:host {
+  width: 310px;
+  border-radius: 40px;
+  border: 1px solid $border-light-color;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & .img-container {
+    border-radius: 40px;
+    overflow: hidden;
+
+    & img {
+      //width: 310px;
+      transition: 0.5s;
+    }
+  }
+
+  & .info-block {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 196px;
+    color: $dark-color;
+
+    & h3 {
+      @include heading3-text();
+    }
+    & p {
+      @include medium-text();
+    }
+  }
+
+  &:hover img {
+    transform: scale(110%);
+  }
+}

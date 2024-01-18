@@ -1,0 +1,100 @@
+@import "assets/variables.scss";
+.hero-section-wrapper {
+  position: relative;
+  width: calc(100vw - 80px);
+  //width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 40px;
+  background-image: url("../../../../../assets/images/img-hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  max-width: 530px;
+  padding: 100px 0;
+  margin-left: 100px;
+  z-index: 2;
+  color: $light-color;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  @media (max-width: calc($mobile-width + 100px)) {
+    margin-left: 0px;
+    padding: 100px 60px;
+  }
+  @media (max-width: $mobile-width) {
+    max-width: 100%;
+    padding: 60px 16px;
+    margin-left: 0px;
+  }
+  & h1 {
+    @include heading1-text();
+
+    @media (max-width: ($mobile-width + 100px)) {
+      @include heading1-text-mobile();
+      text-justify: inter-word;
+    }
+    @media (max-width: $mobile-width) {
+      @include heading1-text-mobile();
+    }
+    & .specific {
+      color: $accent-color;
+    }
+  }
+  & p {
+    @include medium-text();
+    text-justify: inter-word;
+  }
+}
+
+.menu-btn {
+  width: 200px;
+  height: 64px;
+  background-color: $body-color;
+  border-radius: 100px;
+  transition: 0.5s;
+  position: relative;
+  &:hover {
+    background-color: $accent-color;
+  }
+
+  & span {
+    position: relative;
+    left: 14px;
+    transition: 0.5s;
+  }
+
+  &:hover span {
+    left: 0px;
+  }
+  &::after {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    transform: scale(0);
+
+    content: "";
+    transition: 0.5s;
+  }
+  @include linkbutton-text();
+  &:hover::after {
+    display: inline-block;
+    position: relative;
+    top: 2.5px;
+    left: 4px;
+    transform: scale(100%);
+    background-image: url("../../../../../assets/coffee-cup.png");
+  }
+  /*   &:hover {
+    background-color: $accent-color;
+    &::after {
+      content: "";
+      background-image: url("../../../../../assets/coffee-cup.png");
+    }
+  } */
+}

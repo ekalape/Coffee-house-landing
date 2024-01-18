@@ -1,0 +1,30 @@
+<h2>Behind each of our cups hides an <span>amazing surprise</span></h2>
+
+<div class="menu-options__container">
+  <label for="coffee-option" class="menu-option coffee-option"
+    [ngClass]="contentFilter===menuItems.COFFEE?'checked':''">
+    {{menuItems.COFFEE}}
+    <input type="radio" [value]="menuItems.COFFEE" id="coffee-option"
+      (change)="switchContent(menuItems.COFFEE)" name="menu-options"></label>
+  <label for="tea-option" class="menu-option tea-option"
+    [ngClass]="contentFilter===menuItems.TEA?'checked':''">
+    {{menuItems.TEA}}
+    <input type="radio" [value]="menuItems.TEA" id="tea-option"
+      (change)="switchContent(menuItems.TEA)" name="menu-options"></label>
+  <label for="dessert-option" class="menu-option dessert-option"
+    [ngClass]="contentFilter===menuItems.DESSERT?'checked':''">
+    {{menuItems.DESSERT}}
+    <input type="radio" [value]="menuItems.DESSERT" id="dessert-option"
+      (change)="switchContent(menuItems.DESSERT)" name="menu-options"></label>
+</div>
+<div class="menu-items-container">
+  <app-menu-item-card *ngFor="let item of (allMenuContent|async)|menuFilter:contentFilter"
+    (click)="openDetails(item)" [item]="item"></app-menu-item-card>
+</div>
+
+<app-item-details *ngIf="opened" (closeModal)="openDetails(undefined)"
+  [item]="selected"></app-item-details>
+
+
+<!-- <app-item-details (closeModal)="openDetails(undefined)"
+  [item]="tempItem"></app-item-details> -->
